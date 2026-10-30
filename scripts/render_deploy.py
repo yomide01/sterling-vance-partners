@@ -86,6 +86,7 @@ for _ in range(12):
             if r.status == 200:
                 print("HEALTHY at", url)
                 print("RENDER_URL=" + url)
+                print("::notice title=Render URL::" + url)
                 sys.exit(0)
     except Exception:
         time.sleep(10)
