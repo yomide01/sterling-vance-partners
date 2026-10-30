@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
-Disallow: /founder-command-vault
-Disallow: /api/founder-
-Sitemap: https://sterlingvance.com/sitemap.xml
+Disallow: /thanks
+Disallow: /pack.zip
+
+Sitemap: http://localhost:4000/sitemap.xml

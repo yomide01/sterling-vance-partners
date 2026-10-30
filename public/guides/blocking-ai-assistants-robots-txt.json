@@ -1,0 +1,49 @@
+{
+  "title": "Is your website accidentally blocking AI assistants?",
+  "date": "2026-10-30",
+  "description": "A plain-English look at robots.txt, AI crawlers and how to check whether assistants can read your site.",
+  "sections": [
+    {
+      "h2": "Why this matters now",
+      "body": "More people ask an AI assistant questions like who is a good emergency plumber near me, instead of scrolling through search results. For an assistant to mention your business, it generally has to be able to read your website, or find reliable facts about you elsewhere.\n\nMany small business sites block these assistants without the owner ever deciding to. A security plugin, a website template or a developer's old setting can quietly tell AI crawlers to stay out."
+    },
+    {
+      "h2": "What robots.txt is",
+      "body": "Every website can publish a small text file at yourwebsite.com/robots.txt. It is a set of polite instructions for automated visitors: which parts of the site they may read and which they should skip. Search engines and AI companies say they follow it, so it works like a sign on the door rather than a lock.\n\nThe file is made of groups. Each group starts with a User-agent line naming the visitor, followed by Allow or Disallow lines. A line that says Disallow with a single slash means this visitor must stay out of the entire site."
+    },
+    {
+      "h2": "The crawlers worth knowing",
+      "body": "Several well-known names matter for local businesses. GPTBot is used by OpenAI to collect content for training its models. OAI-SearchBot is used for search features inside ChatGPT. ChatGPT-User fetches pages when a person asks the assistant to look at something. PerplexityBot supports the Perplexity answer engine. ClaudeBot is Anthropic's crawler. Google-Extended is a control that lets you decide whether Google may use your content for its Gemini models.\n\nThe names and purposes change over time, so check each company's documentation before making permanent decisions."
+    },
+    {
+      "h2": "How to check your own file",
+      "body": "Open yourwebsite.com/robots.txt in a browser. If you see an error page, you have no file, which means nothing is blocked by it. If you see text, look for any group that includes the names above, or a group that begins with User-agent followed by an asterisk.\n\nThen look at the lines beneath it. A Disallow line containing only a slash blocks everything for that group. A Disallow line with a folder name only blocks that folder, which is usually fine, for example your admin area."
+    },
+    {
+      "h2": "Blocking is a legitimate choice",
+      "body": "Some owners do not want their content used to train AI models, and that is a fair position. The important point is that you decide on purpose. You can allow the crawlers that power search and answers, and block the ones used only for training, because they are separate crawlers with separate names.\n\nIf you want to be recommended by assistants, you generally need to let their search-related crawlers read your public pages. If you are unsure, allow the search crawlers first and review your decision in a few months."
+    },
+    {
+      "h2": "How to change it safely",
+      "body": "On most website builders, robots.txt is edited in the SEO or advanced settings. On WordPress, an SEO plugin usually gives you a text box. Make one change at a time and save a copy of the old text before you edit.\n\nAfter saving, reload yourwebsite.com/robots.txt to confirm the new text is live. Mistakes here can hide your whole site from Google as well, so do not guess: if a line is unclear, leave it alone and ask your web host or developer."
+    },
+    {
+      "h2": "Blocking is only one piece",
+      "body": "Letting assistants in does not guarantee they will mention you. They also look for clear facts: your business name, what you do, where you are, and how to contact you. Publishing this as structured data on your site makes those facts unambiguous, and keeping the same details consistent across your website and your business listings helps too.\n\nNobody can promise results from any of this. What you can do is remove obvious obstacles and make your information easy to read, which is cheap and sensible whatever the future of search looks like."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Will allowing AI crawlers slow down my site?",
+      "a": "Usually not noticeably for a small business site. Well-behaved crawlers limit how often they visit."
+    },
+    {
+      "q": "Can I allow Google search but block AI training?",
+      "a": "Yes. Search crawlers and training controls are usually separate names, so you can set them differently in robots.txt."
+    },
+    {
+      "q": "Does robots.txt hide private pages?",
+      "a": "No. It is a request, not security. Anything private should sit behind a login."
+    }
+  ]
+}
