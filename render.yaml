@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: sterling-vance-partners
+    env: python
+    plan: free
+    buildCommand: "python -c \"print('Build ready')\""
+    startCommand: "python app.py"
+    envVars:
+      - key: PORT
+        value: 4000
+      - key: GEMINI_FREE_MODEL
+        value: gemini-3.8-flash
