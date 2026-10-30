@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-30",
+  "published": [],
+  "rejected": [
+    {
+      "slug": "dentists-ai-search",
+      "why": [
+        "writer unavailable (no AI key or API error)"
+      ]
+    },
+    {
+      "slug": "plumbers-ai-search",
+      "why": [
+        "writer unavailable (no AI key or API error)"
+      ]
+    }
+  ],
+  "total_guides": 2,
+  "money": null,
+  "ceo_note": "Plan: publish 2 guide(s). Topics: dentists-ai-search; plumbers-ai-search"
+}

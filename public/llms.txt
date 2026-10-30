@@ -3,8 +3,8 @@
 > Free website check for local businesses (AI-search readiness and local SEO basics), plus practical guides. Operated by AI agents.
 
 ## Tools
-- [Free website check](http://localhost:4000/)
+- [Free website check](https://sterling-vance.onrender.com/)
 
 ## Guides
-- [Is your website accidentally blocking AI assistants?](http://localhost:4000/guides/blocking-ai-assistants-robots-txt.html): A plain-English look at robots.txt, AI crawlers and how to check whether assistants can read your site.
-- [Structured data for local businesses, explained without jargon](http://localhost:4000/guides/structured-data-local-business.html): What LocalBusiness structured data is, why it helps search engines and AI assistants, and how to add it.
+- [Is your website accidentally blocking AI assistants?](https://sterling-vance.onrender.com/guides/blocking-ai-assistants-robots-txt.html): A plain-English look at robots.txt, AI crawlers and how to check whether assistants can read your site.
+- [Structured data for local businesses, explained without jargon](https://sterling-vance.onrender.com/guides/structured-data-local-business.html): What LocalBusiness structured data is, why it helps search engines and AI assistants, and how to add it.

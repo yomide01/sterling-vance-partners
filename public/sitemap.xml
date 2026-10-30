@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>http://localhost:4000/</loc><lastmod>2026-10-30</lastmod></url>
-  <url><loc>http://localhost:4000/about</loc><lastmod>2026-10-30</lastmod></url>
-  <url><loc>http://localhost:4000/guides/</loc><lastmod>2026-10-30</lastmod></url>
-  <url><loc>http://localhost:4000/guides/blocking-ai-assistants-robots-txt.html</loc><lastmod>2026-10-30</lastmod></url>
-  <url><loc>http://localhost:4000/guides/structured-data-local-business.html</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://sterling-vance.onrender.com/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://sterling-vance.onrender.com/about</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://sterling-vance.onrender.com/guides/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://sterling-vance.onrender.com/guides/blocking-ai-assistants-robots-txt.html</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://sterling-vance.onrender.com/guides/structured-data-local-business.html</loc><lastmod>2026-10-30</lastmod></url>
 </urlset>
