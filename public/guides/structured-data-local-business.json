@@ -1,0 +1,49 @@
+{
+  "title": "Structured data for local businesses, explained without jargon",
+  "date": "2026-10-30",
+  "description": "What LocalBusiness structured data is, why it helps search engines and AI assistants, and how to add it.",
+  "sections": [
+    {
+      "h2": "The problem structured data solves",
+      "body": "A person can look at your homepage and instantly see your name, your phone number and what you sell. A computer has to guess. It reads text, tries to work out which number is a phone number and which line is an address, and sometimes gets it wrong.\n\nStructured data removes the guessing. It is a small block of code, invisible to visitors, that states your business facts in a standard format that search engines understand."
+    },
+    {
+      "h2": "What it looks like",
+      "body": "The standard vocabulary is called Schema.org, and the usual format is JSON-LD. It is a short piece of text placed in your page that says, in effect, this page is about a business of this type, with this name, this phone number and this address.\n\nYou do not need to write it by hand. Many website platforms and plugins can output it, and the Fix Pack on this site generates it from your real homepage details."
+    },
+    {
+      "h2": "Pick the most specific business type",
+      "body": "Schema.org has a general type called LocalBusiness and many more specific ones, such as Dentist, Plumber, Restaurant or LegalService. Use the most specific type that honestly describes you. If nothing fits exactly, LocalBusiness is a perfectly good choice.\n\nGetting the type right helps search systems understand what questions you are a relevant answer to."
+    },
+    {
+      "h2": "The details that matter most",
+      "body": "Start with the basics: your exact business name, your website address, a phone number with the country code, and your full street address. Add your opening hours and the area you serve if you can.\n\nEvery detail must be true and must match what is shown on your website and on your business listings. Mismatches create doubt, and search systems may ignore data they cannot trust."
+    },
+    {
+      "h2": "What not to add",
+      "body": "Do not add star ratings or review counts to structured data unless they come from genuine reviews that visitors can see on that same page. Search engines treat invented or misleading ratings as a violation of their rules and can remove your rich results or worse.\n\nThe same goes for prices, awards and any claim you cannot support. Structured data should describe the page honestly."
+    },
+    {
+      "h2": "How to add it",
+      "body": "On WordPress, an SEO plugin often has a local business section where you enter your details and it handles the code. On other builders, look for a custom code or header code area and paste the block there. Place it once, on your homepage at minimum.\n\nIf you are not comfortable editing code, send the block to whoever manages your website and ask them to add it to the head of the page."
+    },
+    {
+      "h2": "How to test it",
+      "body": "Google provides a free Rich Results Test. Paste your page address, and the tool shows what structured data it found and flags any errors or missing fields. Fix every error, then retest.\n\nWarnings for optional fields are normal. Errors mean the code is broken and should be corrected before you rely on it."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Will structured data make me rank first?",
+      "a": "No. It helps search systems understand your business correctly, which is a foundation, not a guarantee of position."
+    },
+    {
+      "q": "Do I need it on every page?",
+      "a": "Your homepage and contact page are the most important. Other pages can describe their own content if your platform supports it."
+    },
+    {
+      "q": "Is it safe to edit?",
+      "a": "Yes, if you copy carefully and test it afterwards. If your site breaks, remove the block and the page returns to normal."
+    }
+  ]
+}

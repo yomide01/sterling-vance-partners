@@ -1,12 +1,20 @@
 services:
   - type: web
-    name: sterling-vance-partners
-    env: python
+    name: sterling-vance
+    runtime: python
     plan: free
-    buildCommand: "python -c \"print('Build ready')\""
+    buildCommand: "echo no build needed"
     startCommand: "python app.py"
+    healthCheckPath: /healthz
+    autoDeploy: true
     envVars:
-      - key: PORT
-        value: 4000
-      - key: GEMINI_FREE_MODEL
-        value: gemini-3.8-flash
+      - key: PUBLIC_BASE_URL
+        sync: false
+      - key: PAYSTACK_SECRET_KEY
+        sync: false
+      - key: SUPPORT_EMAIL
+        sync: false
+      - key: PRICE
+        value: "15000"
+      - key: CURRENCY
+        value: NGN

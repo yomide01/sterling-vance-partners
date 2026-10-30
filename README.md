@@ -1,23 +1,23 @@
-# Sterling & Vance Partners — Autonomous B2B Growth & Turnkey Web Suite Engine
+# Sterling & Vance: an AI-run company
 
-**Sterling & Vance Partners** is a high-concurrency Python 3.12 autonomous enterprise platform engineered to serve growing businesses across the **United States, United Kingdom, and Europe**.
+A small online company that is operated by software agents and earns from real customers who find it on their own.
 
-## Core Capabilities (4-in-1 Executive Client Suite)
+**The product.** A free website checker for local businesses (15 real checks: structured data, AI-crawler access, speed, mobile,
+phone/booking visibility). Owners who want the fixes pay once for a **Fix Pack** generated from their actual site.
 
-1. **Interactive Production Website & Live Estimator (Tab 1):**
-   - Clean, bespoke customer-facing web experience with live service-tier & urgency price estimation, local time-slot scheduling, and an embedded 24/7 automated client desk.
-2. **Technical SEO & AI-Search Visibility Patch (Tab 2 — Flagship Engine 1):**
-   - Generates production-ready `/llms.txt` citation manifests (for ChatGPT, Perplexity, and Google Gemini visibility) and validated `Schema.org LocalBusiness` JSON-LD snippets.
-3. **Verified US/EU Buyer Lead Feed & Competitor Watch (Tab 3 — Flagship Engine 2):**
-   - Unlocks the first 10 verified local/commercial buyer leads with live search filtering and 1-click `.CSV` export, paired with a regional competitor benchmark matrix.
-4. **Pricing, Margin & Customer Recovery Hub (Tab 4 — Flagship Engine 3):**
-   - Interactive missed-inquiry and abandoned-quote revenue recovery simulator and automated SMS/email follow-up engine.
+**How customers arrive (no outreach).** The Writer agent publishes helpful guides every day; they rank in search and get read by AI
+assistants. Each guide embeds the free checker. Nobody is ever emailed or messaged unless they came to us.
 
-## Quick Start
+## The team (each is a real module)
+| Agent | Job |
+|---|---|
+| CEO (`agents/ceo.py`) | Reads real sales from Paystack, sets the daily plan, enforces limits |
+| Research (`agents/research.py`) | Chooses which guide to write next |
+| Writer (`agents/writer.py`) | Drafts the guide with Gemini under strict rules |
+| Quality (`agents/quality.py`) | Rejects thin, hyped or unsupported content |
+| Guardian (`agents/guardian.py`) | Blocks forbidden actions: spam, fake reviews, invented stats, spending |
+| Publisher (`publisher.py`) | Publishes pages, sitemap, robots.txt, llms.txt |
+| Reporter (`agents/reporter.py`) | Sends you the daily summary (Telegram) |
+| Auditor + Fixer (`auditor.py`, `fixes.py`) | The product itself, run on demand for customers |
 
-```bash
-python app.py
-```
-
-- **Public Customer Portal:** `http://localhost:4000/`
-- **24/7 Cloud Deployment:** Includes `Dockerfile`, `render.yaml`, and `.github/workflows/autonomous_24_7.yml` for zero-cost cloud execution and GitHub Pages syndication.
+Setup is in **SETUP.md**. Run the tests with `python -m unittest discover -s tests`.

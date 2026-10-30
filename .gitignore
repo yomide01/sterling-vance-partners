@@ -1,10 +1,6 @@
 .env
 .env.*
-node_modules/
-data/
+!.env.example
 __pycache__/
 *.pyc
-*.pyo
 *.db
-*.db-wal
-*.db-shm
