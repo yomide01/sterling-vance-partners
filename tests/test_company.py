@@ -130,6 +130,12 @@ class Content(unittest.TestCase):
         g = self.good_guide(); g["sections"][1]["body"] += " we guarantee first place"
         self.assertFalse(quality.check(g)[0])
 
+    def test_honest_disclaimers_allowed(self):
+        g = self.good_guide(); g["sections"][0]["body"] += " Nobody can guarantee rankings, and we do not promise first place."
+        self.assertTrue(quality.check(g)[0], quality.check(g)[1])
+        g["sections"][0]["body"] += " We guarantee you will rank well."
+        self.assertFalse(quality.check(g)[0])
+
     def test_research_skips_existing(self):
         t = research.next_topics({"dentists-ai-search"}, 2)
         self.assertEqual(len(t), 2); self.assertNotIn("dentists-ai-search", [x["slug"] for x in t])

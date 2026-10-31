@@ -21,6 +21,9 @@ def run() -> dict:
             published.append(t["slug"])
         else:
             rejected.append({"slug": t["slug"], "why": why})
+            d = config.ROOT / "data" / "rejected"
+            d.mkdir(parents=True, exist_ok=True)
+            (d / f"{t['slug']}.json").write_text(__import__("json").dumps(g, indent=2, ensure_ascii=False))
     total = publisher.rebuild_indexes()
     report = {"date": time.strftime("%Y-%m-%d", time.gmtime()), "published": published, "rejected": rejected,
               "total_guides": total, "money": plan["money"], "ceo_note": plan["note"]}
