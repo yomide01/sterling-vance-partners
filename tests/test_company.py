@@ -136,6 +136,12 @@ class Content(unittest.TestCase):
         g["sections"][0]["body"] += " We guarantee you will rank well."
         self.assertFalse(quality.check(g)[0])
 
+    def test_everyday_phrases_not_flagged(self):
+        g = self.good_guide(); g["sections"][0]["body"] += " Your Google Business Profile is often the first place AI assistants look."
+        self.assertTrue(quality.check(g)[0], quality.check(g)[1])
+        g["sections"][1]["body"] += " Do this and you will rank first on Google."
+        self.assertFalse(quality.check(g)[0])
+
     def test_research_skips_existing(self):
         t = research.next_topics({"dentists-ai-search"}, 2)
         self.assertEqual(len(t), 2); self.assertNotIn("dentists-ai-search", [x["slug"] for x in t])

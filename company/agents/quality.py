@@ -5,7 +5,7 @@ from typing import Tuple
 
 HARD = re.compile(r"(studies show|research shows|according to (a |an |the )?(recent |new |latest )?(study|survey|report|poll)|"
                   r"#1 ranked|case study|our clients?|testimonial|\b\d{2,3}\s?%|[$\u20a6\u00a3\u20ac]\s?\d)", re.I)
-PROMISE = re.compile(r"(guarantee[sd]?|first place|top of google|number one (spot|rank))", re.I)
+PROMISE = re.compile(r"(guarantee[sd]?|top of google|number one (spot|rank|result)|\brank(ed|s|ing)? (first|#1|number one)|\bfirst[- ]place (rank|spot|result|position))", re.I)
 NEGATION = re.compile(r"(no |not |n't |never |nobody |no one |cannot |can't |without |neither |nor |isn't |aren't |rather than )", re.I)
 
 

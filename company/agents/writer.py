@@ -17,4 +17,8 @@ Return JSON: {{"title": str, "description": str (60-160 chars), "sections": [{{"
     g = llm.generate(prompt, as_json=True)
     if isinstance(g, dict):
         g["date"] = time.strftime("%Y-%m-%d", time.gmtime())
+        d = str(g.get("description", "")).strip()
+        if len(d) > 165:  # models often overshoot: cut at the last full word under the limit
+            d = d[:160].rsplit(" ", 1)[0].rstrip(",;:-") + "."
+        g["description"] = d
     return g if isinstance(g, dict) else None
