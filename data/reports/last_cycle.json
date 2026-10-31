@@ -1,11 +1,17 @@
 {
   "date": "2026-10-31",
   "published": [
-    "hvac-companies-ai-search",
-    "law-firms-ai-search"
+    "restaurants-ai-search"
   ],
-  "rejected": [],
-  "total_guides": 7,
+  "rejected": [
+    {
+      "slug": "accountants-ai-search",
+      "why": [
+        "unsupported claims: our clients"
+      ]
+    }
+  ],
+  "total_guides": 8,
   "distribution": {
     "indexnow": true,
     "bluesky": 0,
@@ -13,5 +19,5 @@
   },
   "weekly_review": "",
   "money": null,
-  "ceo_note": "Plan: publish 2 guide(s). Topics: hvac-companies-ai-search; law-firms-ai-search Live: 0 audits, 0 checkouts started since last restart."
+  "ceo_note": "Plan: publish 2 guide(s). Topics: accountants-ai-search; restaurants-ai-search Live: 0 audits, 0 checkouts started since last restart."
 }

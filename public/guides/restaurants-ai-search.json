@@ -1,0 +1,45 @@
+{
+  "title": "How restaurants can show up when customers ask AI assistants for a local provider",
+  "description": "A practical guide for restaurant owners to improve their visibility when customers use AI assistants to find local dining options.",
+  "sections": [
+    {
+      "h2": "Understanding How AI Assistants Find Information",
+      "body": "AI assistants gather information from many places online. They don't just use one source when a customer asks for a local restaurant. Think of them like a very fast researcher that pulls facts from across the internet to answer a question.\n\nThese systems look for clear, consistent facts about your business. This includes your restaurant's name, its exact address, your phone number, and the type of cuisine you offer. If this core information is easy to find and matches across different websites and platforms, it's simpler for the AI to understand who you are and what you provide.\n\nThe goal is to make your restaurant's details as unambiguous and straightforward as possible for these systems to process. The clearer your online footprint, the better your chances of being accurately presented when a customer asks for a local dining option."
+    },
+    {
+      "h2": "Claim and Optimize Your Business Listings",
+      "body": "The first crucial step is to take full control of your online business listings. The most important of these is your Google Business Profile. This profile is often a primary source of information for many AI assistants, so ensure you have claimed it and filled out every section completely and accurately.\n\nBeyond Google, check other significant online directories where customers might look for restaurants. These include platforms like Yelp, TripAdvisor, and any local specific food guides or reservation sites. It is vital that your restaurant's name, address, and phone number are identical across all these platforms. Inconsistent information can confuse AI systems and make it harder for them to recommend you.\n\nAdd your current operating hours, a detailed description of your cuisine, and high-quality photos of your food and interior. Keep your menu updated with current offerings and prices. The more comprehensive and accurate your listings are, the better chance AI assistants have of recommending your establishment when relevant searches occur."
+    },
+    {
+      "h2": "Build a Strong Online Presence with Your Website",
+      "body": "Your own website serves as your most authoritative online presence. It should be the definitive source for all information about your restaurant. Ensure your website is easy to navigate and clearly displays your menu, current operating hours, exact location, and contact details.\n\nConsider using structured data, also known as Schema markup, on your website. This is a specific way to label information like your menu items, prices, opening hours, and address directly within your website's code. While not a guarantee, implementing structured data can help AI systems better understand and categorize your restaurant's specific offerings and details.\n\nMake sure your website is mobile-friendly. Many customers will be searching for restaurants on their phones, and AI assistants often prioritize websites that offer a good experience on mobile devices. A fast, responsive site benefits both potential customers and the AI systems trying to gather information about your business."
+    },
+    {
+      "h2": "Encourage and Manage Online Reviews",
+      "body": "Online reviews are a significant factor for both human customers and AI assistants. They provide social proof and give AI systems signals about the quality and popularity of your restaurant. Encourage satisfied customers to leave honest reviews on platforms like Google, Yelp, and TripAdvisor after their visit.\n\nIt's equally important to actively manage these reviews. Respond to all reviews, both positive and negative, in a timely and professional manner. Thank customers for their positive feedback and address any concerns raised in negative reviews constructively. This shows you are attentive and care about customer experience, which can be a positive signal.\n\nThe content within reviews can also provide AI assistants with keywords and context about your food, ambiance, and service. For example, if many reviews frequently mention your \"delicious pasta\" or \"friendly staff,\" AI systems can associate these positive attributes with your restaurant, making it more likely to be recommended for related queries."
+    },
+    {
+      "h2": "Leverage Local Keywords and Content",
+      "body": "When customers ask AI assistants for restaurant recommendations, they often use specific local terms. Think about the phrases people use to find a restaurant like yours in your area. This might include your specific cuisine type, your neighborhood name, or local landmarks.\n\nNaturally weave these local keywords into your website's content, your Google Business Profile description, and even your menu descriptions. For example, instead of just \"Pizza,\" you might say \"Authentic Neapolitan Pizza in [Your Neighborhood]\" or \"Best Seafood Restaurant near [Local Landmark].\" This helps AI systems connect your restaurant to relevant local searches.\n\nYou could also consider creating short blog posts or news updates on your website about local events you participate in, special dishes featuring local ingredients, or stories about your community involvement. This type of content can further reinforce your local relevance to AI assistants, making your restaurant a more prominent local option."
+    },
+    {
+      "h2": "Consider `llms.txt`",
+      "body": "There is a proposed standard called `llms.txt` that aims to give website owners a way to communicate preferences to large language models and other AI systems. It's designed to function similarly to `robots.txt`, which instructs traditional search engine crawlers on what parts of a site to access.\n\nIt's important to understand that `llms.txt` is currently a proposed convention. It is not universally adopted by all AI systems, and there is no guarantee that any specific AI will honor its directives or even look for it. Implementing it now is a forward-looking step, but its immediate impact on your visibility is not certain.\n\nIf it gains wider support, an `llms.txt` file could potentially be used to specify which parts of your website are most relevant for AI systems to summarize or reference, or to indicate preferred ways your business information should be presented. For now, focus on the established methods of online visibility detailed in the other sections."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Do I need to pay to get my restaurant listed with AI assistants?",
+      "a": "No, the foundational steps for improving your visibility, such as claiming and optimizing your Google Business Profile and ensuring consistent information across major directories, are free. The focus should be on providing accurate, complete, and up-to-date information."
+    },
+    {
+      "q": "How quickly will I see results after making these changes?",
+      "a": "Improving your online presence is an ongoing effort, not a one-time fix. While some changes, like updating your hours, might be reflected quickly, others, such as building a strong profile of positive customer reviews, take consistent effort and time. Patience and persistence are key."
+    },
+    {
+      "q": "Should I use AI tools to write my website content or reviews?",
+      "a": "You can use AI tools for inspiration, to help brainstorm ideas, or to draft initial content. However, it is always crucial to review, edit, and personalize any AI-generated text yourself. Ensure the final content is authentic, factually accurate, and genuinely reflects your restaurant's unique voice and offerings. Always check for accuracy and tone."
+    }
+  ],
+  "date": "2026-10-31"
+}
