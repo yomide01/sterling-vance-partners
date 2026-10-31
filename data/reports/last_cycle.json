@@ -1,21 +1,18 @@
 {
-  "date": "2026-10-30",
-  "published": [],
+  "date": "2026-10-31",
+  "published": [
+    "dentists-ai-search"
+  ],
   "rejected": [
-    {
-      "slug": "dentists-ai-search",
-      "why": [
-        "contains statistics, guarantees or testimonial-style claims we cannot back up"
-      ]
-    },
     {
       "slug": "plumbers-ai-search",
       "why": [
-        "contains statistics, guarantees or testimonial-style claims we cannot back up"
+        "unsupported claims: ess Profile is often the first place AI assistants ",
+        "description length (181)"
       ]
     }
   ],
-  "total_guides": 2,
+  "total_guides": 3,
   "money": null,
   "ceo_note": "Plan: publish 2 guide(s). Topics: dentists-ai-search; plumbers-ai-search"
 }
