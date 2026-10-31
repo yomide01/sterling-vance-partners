@@ -30,3 +30,5 @@ TELEGRAM_CHAT_ID = env("TELEGRAM_CHAT_ID")
 # Company guardrails (the Guardian agent enforces these)
 MAX_GUIDES_PER_DAY = int(env("MAX_GUIDES_PER_DAY", "2"))
 MONTHLY_SPEND_LIMIT_USD = 0  # the company never spends money
+
+STATS_TOKEN = env("STATS_TOKEN")  # protects /dashboard and /stats (founder only)

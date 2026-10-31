@@ -1,0 +1,25 @@
+"""The company's org chart. Every box here is a real, running piece of code (see 'runs_as')."""
+
+ORG = [
+    {"dept": "CEO", "head": "CEO Agent", "mission": "Sets each day's plan from real numbers (sales, visits, which guides get read) and reviews the strategy every week.",
+     "runs_as": "company/agents/ceo.py", "schedule": "Daily 05:15 UTC; weekly review on Mondays", "workers": []},
+    {"dept": "Marketing (attracts customers)", "head": "Marketing Manager", "mission": "Gets business owners to find us without us ever contacting anyone.",
+     "runs_as": "company/cycle.py", "schedule": "Daily",
+     "workers": [("Research Analyst", "Chooses the next guide topic, favouring niches that get read", "agents/research.py"),
+                 ("Content Writer", "Drafts the guide with Gemini under strict honesty rules", "agents/writer.py"),
+                 ("Quality Editor", "Rejects thin, hyped or unsupported content", "agents/quality.py"),
+                 ("Publisher", "Publishes pages, sitemap, robots.txt, llms.txt", "publisher.py"),
+                 ("Distribution Agent", "Tells search engines (IndexNow) and posts to our own Bluesky/Telegram channels", "agents/distribution.py")]},
+    {"dept": "Sales & Fulfilment (serves customers)", "head": "Fulfilment Manager", "mission": "Serves every visitor instantly, any hour: free audit, then the paid Fix Pack.",
+     "runs_as": "app.py (web server)", "schedule": "24/7, on demand",
+     "workers": [("Website Auditor", "Runs the 15 real checks on the customer's own site", "auditor.py"),
+                 ("Fix-Pack Builder", "Generates the customer's code files from their real site data", "fixes.py"),
+                 ("Payment Verifier", "Confirms every payment with Paystack before unlocking anything", "payments.py")]},
+    {"dept": "Operations (keeps it running)", "head": "Operations Manager", "mission": "Keeps the website awake and healthy; restarts it automatically if it goes down; reports to the founder.",
+     "runs_as": "scripts/ops_monitor.py", "schedule": "Every 10 minutes, 24/7",
+     "workers": [("Uptime Monitor", "Checks the live site and keeps the free host awake", "scripts/ops_monitor.py"),
+                 ("Auto-Recovery", "Triggers a redeploy if the site stays down", "scripts/ops_monitor.py"),
+                 ("Reporter", "Sends the founder a daily summary", "agents/reporter.py")]},
+    {"dept": "Compliance", "head": "Guardian Agent", "mission": "Vetoes anything forbidden: spam, fake reviews, invented statistics, spending money.",
+     "runs_as": "company/agents/guardian.py", "schedule": "Checks every action", "workers": []},
+]

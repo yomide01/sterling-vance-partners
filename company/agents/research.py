@@ -17,10 +17,13 @@ def slug_for(niche: str, tag: str) -> str:
     return (niche.lower().replace(" ", "-") + "-" + tag)
 
 
-def next_topics(existing_slugs: set, limit: int) -> List[dict]:
+def next_topics(existing_slugs: set, limit: int, niche_views: dict = None) -> List[dict]:
+    """Writes about the niches whose guides get read most first (the CEO's weekly strategy feeds niche_views)."""
+    views = niche_views or {}
+    niches = sorted(NICHES, key=lambda n: -views.get(n, 0))
     out = []
     for tag_idx in range(len(ANGLES)):
-        for n in NICHES:
+        for n in niches:
             title, tag = ANGLES[tag_idx]
             s = slug_for(n, tag)
             if s not in existing_slugs:

@@ -29,4 +29,4 @@ def summary(r: dict) -> str:
     money = (f"Last 30 days: {rev.get('sales', 0)} sales, {rev.get('currency', '')} {rev.get('revenue', 0):,}"
              if rev else "Revenue: payments not connected yet")
     return (f"Daily report {r['date']}\nNew guides published: {len(r['published'])}\nRejected by quality check: {len(r['rejected'])}\n"
-            f"Total guides live: {r['total_guides']}\n{money}\n{r.get('ceo_note', '')}")
+            f"Total guides live: {r['total_guides']}\nAnnounced: {r.get('distribution') or 'nothing new'}\n{money}\n{r.get('ceo_note', '')}")

@@ -87,3 +87,44 @@ def guide(g: Dict[str, Any], slug: str) -> str:
     return page(g["title"], f"""<h1>{E(g['title'])}</h1><p class="mut">{E(g['description'])}</p>{secs}{('<h2>Common questions</h2>' + faq) if faq else ''}
 <div class="card"><b>Check your own website, free</b><form class="row" action="/audit" method="get"><input type="text" name="url" placeholder="yourbusiness.com" required><button>Check it</button></form></div>""",
         g["description"], f"{config.BASE_URL}/guides/{slug}.html", ld)
+
+
+def _ago(ts: int) -> str:
+    import time
+    if not ts:
+        return "not yet"
+    d = int(time.time() - ts)
+    return "just now" if d < 60 else f"{d // 60} min ago" if d < 3600 else f"{d // 3600} h ago" if d < 86400 else f"{d // 86400} days ago"
+
+
+def _org_html(extra: dict = None) -> str:
+    from .org import ORG
+    extra = extra or {}
+    out = ""
+    for d in ORG:
+        workers = "".join(f"<li><b>{E(w[0])}</b>: {E(w[1])}</li>" for w in d["workers"])
+        live = f'<p><b>Live status:</b> {E(extra[d["dept"]])}</p>' if d["dept"] in extra else ""
+        out += (f'<div class="card"><b>{E(d["head"])}</b> <span class="mut">({E(d["dept"])})</span><p>{E(d["mission"])}</p>'
+                f'<p class="mut">Runs: {E(d["schedule"])}</p>{live}{("<ul>" + workers + "</ul>") if workers else ""}</div>')
+    return out
+
+
+def team() -> str:
+    return page("Meet the AI team", f"""<h1>Meet the team</h1><p class="mut">Every role below is a software agent that really runs. There are no hidden humans and no fake staff.</p>{_org_html()}""",
+                "How the AI agents that run this company are organised.")
+
+
+def dashboard(ctx: dict) -> str:
+    m, rep = ctx["metrics"], ctx.get("report") or {}
+    rev = ctx.get("money")
+    top = sorted(m["guide_views"].items(), key=lambda kv: -kv[1])[:5]
+    nums = f"""<div class="card"><b>Right now</b><p>Website up for {m['uptime_s'] // 3600} h {(m['uptime_s'] % 3600) // 60} min &middot; free audits run: <b>{m['audits']}</b> &middot;
+checkouts started: <b>{m['checkout_started']}</b> &middot; paid packs unlocked: <b>{m['paid_unlocks']}</b></p>
+<p>Money (last 30 days, from Paystack): <b>{('%d sales, %s %s' % (rev['sales'], rev['currency'], format(rev['revenue'], ',')) if rev else 'payments not connected yet')}</b></p>
+<p>Guides live: <b>{ctx['guides']}</b> &middot; most-read: {E(', '.join('%s (%d)' % kv for kv in top) or 'nothing yet')}</p></div>"""
+    live = {"Operations (keeps it running)": f"last health check {_ago(m['last_health_ping'])} ({m['health_pings']} checks since restart)",
+            "Sales & Fulfilment (serves customers)": f"last audit {_ago(m['last_audit'])}",
+            "Marketing (attracts customers)": f"last daily run {E(rep.get('date', 'not yet'))}: published {len(rep.get('published', []))}, rejected {len(rep.get('rejected', []))}, announced {E(str(rep.get('distribution') or 'n/a'))}",
+            "CEO": E(rep.get("ceo_note", "no plan yet"))}
+    review = f'<div class="card"><b>CEO weekly review</b><pre>{E(ctx["review"])}</pre></div>' if ctx.get("review") else ""
+    return page("Founder dashboard", f"<h1>Founder dashboard</h1><p class='mut'>Private. Everything here is live data from the running company.</p>{nums}{review}<h2>The company</h2>{_org_html(live)}")

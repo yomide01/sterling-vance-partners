@@ -8,7 +8,9 @@ import urllib.parse
 import zipfile
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
-from company import auditor, config, fixes, payments, site
+import hmac
+from company import auditor, config, fixes, metrics, payments, publisher, site
+from company.agents import ceo as ceo_agent
 from company.safe_fetch import FetchError, normalize_url
 
 _hits: dict = {}
@@ -37,6 +39,7 @@ def run_audit(url: str) -> dict:
             return c[1]
     with _slots:
         a = auditor.audit(key)
+    metrics.hit("audit")
     with _lock:
         if len(_cache) > 500:
             _cache.clear()
@@ -74,7 +77,12 @@ class Handler(BaseHTTPRequestHandler):
             if u.path == "/about":
                 return self._send(200, site.about())
             if u.path == "/healthz":
+                metrics.hit("health")
                 return self._send(200, "ok", "text/plain")
+            if u.path == "/team":
+                return self._send(200, site.team())
+            if u.path in ("/stats", "/dashboard"):
+                return self._admin(u.path, q)
             if u.path == "/audit":
                 if not rate_ok(self._ip()):
                     return self._send(429, site.message("Slow down", "Too many checks from your network this hour. Please try again later."))
@@ -88,6 +96,26 @@ class Handler(BaseHTTPRequestHandler):
         except Exception:
             return self._send(500, site.message("Something went wrong", "Please try again in a minute."))
 
+    def _admin(self, path, q):
+        tok = (self.headers.get("Authorization", "")[7:] or q.get("token", ""))
+        if not config.STATS_TOKEN or not hmac.compare_digest(tok, config.STATS_TOKEN):
+            return self._send(404, site.message("Page not found", "That page doesn't exist."))
+        if path == "/stats":
+            return self._send(200, json.dumps(metrics.snapshot()), "application/json")
+        rep = {}
+        f = config.REPORTS / "last_cycle.json"
+        if f.exists():
+            rep = json.loads(f.read_text())
+        money = None
+        if payments.enabled():
+            try:
+                money = payments.revenue_last_days(30)
+            except Exception:
+                pass
+        rv = config.REPORTS / "weekly_review.md"
+        return self._send(200, site.dashboard({"metrics": metrics.snapshot(), "report": rep, "money": money, "guides": len(publisher.all_guides()),
+                                               "review": rv.read_text() if rv.exists() else ""}), extra={"Cache-Control": "no-store"})
+
     def _paid(self, path, ref):
         if not payments.enabled():
             return self._send(404, site.message("Not available", "Payments are not switched on yet."))
@@ -95,6 +123,7 @@ class Handler(BaseHTTPRequestHandler):
         if not ok:
             return self._send(402, site.message("Payment not confirmed", "We couldn't confirm that payment. If you were charged, email us with your receipt and we will sort it out."))
         a = auditor.audit(ok["site"])
+        metrics.hit("paid_unlocks")
         pack = fixes.build_pack(a)
         if path == "/pack.zip":
             buf = io.BytesIO()
@@ -119,7 +148,9 @@ class Handler(BaseHTTPRequestHandler):
                     return self._send(400, site.message("Check your details", "Please enter a valid email address."))
                 if not rate_ok(self._ip(), 20):
                     return self._send(429, site.message("Slow down", "Please try again later."))
-                return self._send(303, "", "text/plain", {"Location": payments.init_checkout(email, url)})
+                loc = payments.init_checkout(email, url)
+                metrics.hit("checkout_started")
+                return self._send(303, "", "text/plain", {"Location": loc})
         except FetchError as e:
             return self._send(400, site.message("Check your details", str(e)))
         except Exception:
@@ -133,6 +164,8 @@ class Handler(BaseHTTPRequestHandler):
         f = (config.PUBLIC / rel).resolve()
         if config.PUBLIC.resolve() not in f.parents or not f.is_file():
             return self._send(404, site.message("Page not found", "That page doesn't exist."))
+        if rel.startswith("guides/") and rel.endswith(".html") and f.name != "index.html":
+            metrics.hit("guide_view", f.stem)
         ctype = mimetypes.guess_type(f.name)[0] or "text/plain"
         return self._send(200, f.read_bytes(), ctype + ("; charset=utf-8" if ctype.startswith("text") or "xml" in ctype else ""),
                           {"Cache-Control": "public, max-age=300"})

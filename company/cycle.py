@@ -2,7 +2,7 @@
 import time
 
 from . import config, publisher
-from .agents import ceo, guardian, quality, reporter, writer
+from .agents import ceo, distribution, guardian, quality, reporter, writer
 
 
 def run() -> dict:
@@ -25,8 +25,9 @@ def run() -> dict:
             d.mkdir(parents=True, exist_ok=True)
             (d / f"{t['slug']}.json").write_text(__import__("json").dumps(g, indent=2, ensure_ascii=False))
     total = publisher.rebuild_indexes()
+    announced = distribution.announce(published, publisher.all_guides()) if published else {}
     report = {"date": time.strftime("%Y-%m-%d", time.gmtime()), "published": published, "rejected": rejected,
-              "total_guides": total, "money": plan["money"], "ceo_note": plan["note"]}
+              "total_guides": total, "distribution": announced, "weekly_review": plan.get("review", ""), "money": plan["money"], "ceo_note": plan["note"]}
     reporter.save(report)
     reporter.telegram(reporter.summary(report))
     return report

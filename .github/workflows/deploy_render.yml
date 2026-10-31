@@ -17,6 +17,7 @@ jobs:
           RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
           PAYSTACK_SECRET_KEY: ${{ secrets.PAYSTACK_SECRET_KEY }}
           SUPPORT_EMAIL: ${{ secrets.SUPPORT_EMAIL }}
+          STATS_TOKEN: ${{ secrets.STATS_TOKEN }}
           PRICE: ${{ secrets.PRICE }}
           CURRENCY: ${{ secrets.CURRENCY }}
         run: python scripts/render_deploy.py

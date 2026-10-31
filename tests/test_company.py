@@ -156,6 +156,45 @@ class Content(unittest.TestCase):
         self.assertGreaterEqual(len(publisher.all_guides()), 2)
 
 
+class Operations(unittest.TestCase):
+    def test_metrics_and_admin_pages(self):
+        import urllib.request, urllib.error
+        from http.server import ThreadingHTTPServer
+        config.STATS_TOKEN = "tok123"
+        import app
+        srv = ThreadingHTTPServer(("127.0.0.1", 0), app.Handler)
+        threading.Thread(target=srv.serve_forever, daemon=True).start()
+        base = "http://127.0.0.1:%d" % srv.server_port
+        def get(path, hdr=None):
+            try:
+                with urllib.request.urlopen(urllib.request.Request(base + path, headers=hdr or {})) as r: return r.status, r.read().decode()
+            except urllib.error.HTTPError as e: return e.code, ""
+        self.assertEqual(get("/stats")[0], 404)                                 # no token: invisible
+        self.assertEqual(get("/dashboard?token=wrong")[0], 404)
+        get("/healthz"); get("/guides/structured-data-local-business.html")
+        st, body = get("/stats", {"Authorization": "Bearer tok123"})
+        d = json.loads(body)
+        self.assertEqual(st, 200); self.assertGreaterEqual(d["health_pings"], 1)
+        self.assertEqual(d["guide_views"].get("structured-data-local-business"), 1)
+        st, html_ = get("/dashboard?token=tok123")
+        self.assertEqual(st, 200); self.assertIn("Operations Manager", html_); self.assertIn("CEO Agent", html_)
+        self.assertEqual(get("/team")[0], 200)
+        srv.shutdown()
+
+    def test_ceo_prioritises_read_niches(self):
+        from company.agents import ceo
+        v = ceo.niche_views({"roofers-ai-search": 9, "dentists-schema": 2})
+        self.assertEqual(v["roofers"], 9)
+        t = research.next_topics(set(), 2, v)
+        self.assertEqual(t[0]["niche"], "roofers")
+
+    def test_distribution_is_silent_without_credentials(self):
+        from company.agents import distribution
+        for k in ("BLUESKY_HANDLE", "BLUESKY_APP_PASSWORD", "TELEGRAM_CHANNEL_ID"): os.environ.pop(k, None)
+        self.assertFalse(distribution.post_bluesky("t", "d", "https://x.y/z"))
+        self.assertFalse(distribution.post_telegram_channel("t", "https://x.y/z"))
+
+
 class Guardian(unittest.TestCase):
     def test_forbidden_actions(self):
         for a in guardian.FORBIDDEN:

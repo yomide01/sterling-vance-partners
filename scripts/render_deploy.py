@@ -39,7 +39,7 @@ st, found = call("GET", "/services?name=" + NAME + "&limit=20")
 svc = next((x["service"] for x in (found or []) if isinstance(found, list) and x["service"]["name"] == NAME), None)
 
 env = {"PUBLIC_BASE_URL": "https://%s.onrender.com" % NAME, "PRICE": os.environ.get("PRICE") or "15000", "CURRENCY": os.environ.get("CURRENCY") or "NGN"}
-for k in ("PAYSTACK_SECRET_KEY", "SUPPORT_EMAIL"):
+for k in ("PAYSTACK_SECRET_KEY", "SUPPORT_EMAIL", "STATS_TOKEN"):
     if os.environ.get(k):
         env[k] = os.environ[k]
 

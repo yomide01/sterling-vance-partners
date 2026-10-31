@@ -32,4 +32,9 @@ def rebuild_indexes() -> int:
     top = "\n".join(f"- [{g['title']}]({config.BASE_URL}/guides/{s}.html): {g['description']}" for s, g in list(guides.items())[:30])
     (config.PUBLIC / "llms.txt").write_text(f"# {config.BRAND}\n\n> Free website check for local businesses (AI-search readiness and local SEO basics), "
         f"plus practical guides. Operated by AI agents.\n\n## Tools\n- [Free website check]({config.BASE_URL}/)\n\n## Guides\n{top}\n")
+    try:
+        from .agents.distribution import indexnow_key
+        (config.PUBLIC / f"{indexnow_key()}.txt").write_text(indexnow_key())
+    except Exception:
+        pass
     return len(guides)
