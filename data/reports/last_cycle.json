@@ -1,11 +1,17 @@
 {
   "date": "2026-10-31",
   "published": [
-    "plumbers-ai-search",
-    "roofers-ai-search"
+    "hvac-companies-ai-search",
+    "law-firms-ai-search"
   ],
   "rejected": [],
-  "total_guides": 5,
+  "total_guides": 7,
+  "distribution": {
+    "indexnow": true,
+    "bluesky": 0,
+    "telegram_channel": 0
+  },
+  "weekly_review": "",
   "money": null,
-  "ceo_note": "Plan: publish 2 guide(s). Topics: plumbers-ai-search; roofers-ai-search"
+  "ceo_note": "Plan: publish 2 guide(s). Topics: hvac-companies-ai-search; law-firms-ai-search Live: 0 audits, 0 checkouts started since last restart."
 }
