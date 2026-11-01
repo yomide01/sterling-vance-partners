@@ -1,0 +1,49 @@
+{
+  "title": "How accountants can show up when customers ask AI assistants for a local provider",
+  "description": "Learn practical steps for local accountants to improve their visibility when potential clients use AI assistants to search for services.",
+  "sections": [
+    {
+      "h2": "Strengthen Your Google Business Profile",
+      "body": "Your Google Business Profile (GBP) is often the first place AI assistants look for local business information. Ensuring it is accurate and complete is a foundational step. Think of it as your digital storefront for local searches, including those powered by AI.\n\nTake the time to verify your listing and fill out every section thoroughly. Choose the most precise categories for your accounting services. List all the specific services you offer, ensure your business hours are correct, and double-check your contact details. Adding photos of your office or team can also make your profile more engaging.\n\nRegularly review your GBP for accuracy. Respond to any questions posted by potential clients and keep your information current. A well-maintained profile signals to AI assistants that your business is active and reliable."
+    },
+    {
+      "h2": "Build a Clear, Localized Website",
+      "body": "Your website serves as a comprehensive source of information about your accounting practice. AI assistants can draw details from your site to understand your services and local relevance. It's important that your website is easy to navigate and functions well on mobile devices.\n\nFocus on making your website clearly communicate your local presence. Include your service area, mention local landmarks if appropriate, and describe services tailored to local businesses or individuals. Use clear headings and simple language to explain what you do.\n\nEnsure your contact information is prominently displayed on every page. Consider having dedicated pages for each specific accounting service you offer, explaining them in detail. This helps AI assistants categorize your expertise and match it to user queries."
+    },
+    {
+      "h2": "Create Content That Answers Client Questions",
+      "body": "Many people use AI assistants to get answers to questions. If your website provides clear, helpful answers to common accounting inquiries, you are more likely to be seen as a relevant and authoritative resource.\n\nThink about the questions potential clients might ask before they even realize they need an accountant. For example, questions about tax deductions for small businesses, payroll setup, or financial planning basics. These are opportunities to demonstrate your knowledge.\n\nDevelop blog posts, articles, or an FAQ section on your website that addresses these topics. Use straightforward language to explain complex concepts. This type of content can help AI assistants understand your areas of expertise and recommend your practice when relevant questions arise."
+    },
+    {
+      "h2": "Cultivate and Manage Online Reviews",
+      "body": "Online reviews are a strong indicator of trust and service quality. AI assistants can consider these signals when recommending local providers. Positive reviews from satisfied clients can significantly enhance your visibility and credibility.\n\nEncourage your happy clients to leave reviews on platforms like Google. Make the process easy for them by providing direct links or clear instructions. Authentic reviews build social proof for your practice.\n\nMake it a practice to respond to all reviews, whether positive or negative, in a professional and timely manner. This shows that you value client feedback and are actively engaged with your community. Your responses can also provide additional context about your services."
+    },
+    {
+      "h2": "Implement Structured Data (Schema Markup)",
+      "body": "Structured data, also known as schema markup, is a way to label information on your website so that search engines and AI assistants can better understand it. It's like giving them a clear, organized map of your business details.\n\nFocus on implementing `LocalBusiness` schema to specify your business type, physical address, phone number, and opening hours. You can also use `Service` schema to describe your specific accounting offerings. This helps AI systems categorize your business accurately.\n\nWhile it might sound technical, many website platforms offer tools or plugins that can assist with implementing structured data. Taking this behind-the-scenes step can improve how AI systems interpret your business information and present it to users."
+    },
+    {
+      "h2": "Understand `llms.txt` (Proposed Convention)",
+      "body": "There is a proposed convention called `llms.txt` which aims to give website owners some control over how large language models (LLMs) access and use their website content. Its purpose is to allow websites to specify which parts of their content can or cannot be used by AI systems.\n\nIt is important to note that `llms.txt` is a developing idea and does not currently have guaranteed support across all AI systems or search engines. It is an attempt to establish a standard, similar to `robots.txt`, but specifically for AI access.\n\nWhile not universally adopted at this time, it is worth being aware of this discussion. Keep an eye on its development, as future tools and standards might emerge to help manage your content's interaction with AI systems."
+    },
+    {
+      "h2": "Monitor and Adapt Your Strategy",
+      "body": "The landscape of AI assistants and how they find and present information is continuously evolving. What works effectively today might change as technology advances. Staying informed and flexible is key.\n\nRegularly check your online presence. Conduct searches for your accounting services as a potential client would, using various AI assistants or search engines. Observe what results appear and how your business is presented.\n\nBe prepared to adjust your approach based on new insights and changes in technology. Regularly reviewing your online visibility and adapting your strategy is a practical way to maintain and improve your presence."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Do I need a special AI tool to get found by AI assistants?",
+      "a": "No, you do not need a special AI tool. Focus on strengthening your foundational online presence. AI assistants draw information from publicly available, well-structured, and accurate online data sources like your Google Business Profile and website."
+    },
+    {
+      "q": "How often should I update my Google Business Profile?",
+      "a": "It's worth reviewing and updating your Google Business Profile regularly. Check your details at least quarterly, update your hours for holidays, and respond to reviews and questions promptly. Consistent engagement signals an active business."
+    },
+    {
+      "q": "Is it important to have a blog on my website?",
+      "a": "A blog can be a valuable asset for your website. It allows you to create content that directly answers common client questions and demonstrates your expertise. This can help AI assistants understand your relevance and recommend your services for specific inquiries."
+    }
+  ],
+  "date": "2026-11-01"
+}

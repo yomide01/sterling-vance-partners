@@ -1,17 +1,11 @@
 {
-  "date": "2026-10-31",
+  "date": "2026-11-01",
   "published": [
-    "restaurants-ai-search"
+    "accountants-ai-search",
+    "hair-salons-ai-search"
   ],
-  "rejected": [
-    {
-      "slug": "accountants-ai-search",
-      "why": [
-        "unsupported claims: our clients"
-      ]
-    }
-  ],
-  "total_guides": 8,
+  "rejected": [],
+  "total_guides": 10,
   "distribution": {
     "indexnow": true,
     "bluesky": 0,
@@ -19,5 +13,5 @@
   },
   "weekly_review": "",
   "money": null,
-  "ceo_note": "Plan: publish 2 guide(s). Topics: accountants-ai-search; restaurants-ai-search Live: 0 audits, 0 checkouts started since last restart."
+  "ceo_note": "Plan: publish 2 guide(s). Topics: accountants-ai-search; hair-salons-ai-search Live: 0 audits, 0 checkouts started since last restart."
 }
