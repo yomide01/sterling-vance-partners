@@ -1,17 +1,23 @@
 {
-  "date": "2026-11-01",
+  "date": "2026-11-02",
   "published": [
-    "accountants-ai-search",
-    "hair-salons-ai-search"
+    "real-estate-agents-ai-search"
   ],
-  "rejected": [],
-  "total_guides": 10,
+  "rejected": [
+    {
+      "slug": "gyms-ai-search",
+      "why": [
+        "under 650 words"
+      ]
+    }
+  ],
+  "total_guides": 11,
   "distribution": {
     "indexnow": true,
     "bluesky": 0,
     "telegram_channel": 0
   },
-  "weekly_review": "",
+  "weekly_review": "**Weekly Review: CEO Update**\n\nNo metrics indicate positive performance this week.\nWe have zero website audits initiated and zero checkout starts.\nCritically, all niche pages show zero views, highlighting a complete lack of audience engagement.\nConsequently, our revenue remains null.\nNext week, the AI will identify and directly offer 50 free website audits to local businesses.",
   "money": null,
-  "ceo_note": "Plan: publish 2 guide(s). Topics: accountants-ai-search; hair-salons-ai-search Live: 0 audits, 0 checkouts started since last restart."
+  "ceo_note": "Plan: publish 2 guide(s). Topics: gyms-ai-search; real-estate-agents-ai-search Live: 0 audits, 0 checkouts started since last restart."
 }
