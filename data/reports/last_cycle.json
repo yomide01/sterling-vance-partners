@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "published": [
-    "gyms-ai-search",
-    "electricians-ai-search"
+    "physiotherapy-clinics-ai-search",
+    "auto-repair-shops-ai-search"
   ],
   "rejected": [],
-  "total_guides": 13,
+  "total_guides": 15,
   "distribution": {
     "indexnow": true,
     "bluesky": 0,
@@ -13,5 +13,5 @@
   },
   "weekly_review": "",
   "money": null,
-  "ceo_note": "Plan: publish 2 guide(s). Topics: gyms-ai-search; electricians-ai-search Live: 0 audits, 0 checkouts started since last restart."
+  "ceo_note": "Plan: publish 2 guide(s). Topics: physiotherapy-clinics-ai-search; auto-repair-shops-ai-search Live: 0 audits, 0 checkouts started since last restart."
 }
