@@ -1,17 +1,23 @@
 {
-  "date": "2026-11-04",
-  "published": [
-    "physiotherapy-clinics-ai-search",
-    "auto-repair-shops-ai-search"
+  "date": "2026-11-05",
+  "published": [],
+  "rejected": [
+    {
+      "slug": "cleaning-companies-ai-search",
+      "why": [
+        "writer unavailable (no AI key or API error)"
+      ]
+    },
+    {
+      "slug": "dentists-schema",
+      "why": [
+        "writer unavailable (no AI key or API error)"
+      ]
+    }
   ],
-  "rejected": [],
   "total_guides": 15,
-  "distribution": {
-    "indexnow": true,
-    "bluesky": 0,
-    "telegram_channel": 0
-  },
+  "distribution": {},
   "weekly_review": "",
   "money": null,
-  "ceo_note": "Plan: publish 2 guide(s). Topics: physiotherapy-clinics-ai-search; auto-repair-shops-ai-search Live: 0 audits, 0 checkouts started since last restart."
+  "ceo_note": "Plan: publish 2 guide(s). Topics: cleaning-companies-ai-search; dentists-schema Live: 0 audits, 0 checkouts started since last restart."
 }
