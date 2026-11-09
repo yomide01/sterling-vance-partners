@@ -1,7 +1,1 @@
-**Weekly Review: CEO Update**
-
-No metrics indicate positive performance this week.
-We have zero website audits initiated and zero checkout starts.
-Critically, all niche pages show zero views, highlighting a complete lack of audience engagement.
-Consequently, our revenue remains null.
-Next week, the AI will identify and directly offer 50 free website audits to local businesses.
+Weekly facts: {"stats": {"audits": 0, "checkout_started": 0, "guide_views": {}}, "money": null, "niche_views": {"dentists": 0, "plumbers": 0, "roofers": 0, "HVAC companies": 0, "law firms": 0, "accountants": 0, "restaurants": 0, "hair salons": 0, "gyms": 0, "real estate agents": 0, "electricians": 0, "physiotherapy clinics": 0, "auto repair shops": 0, "cleaning companies": 0}}
